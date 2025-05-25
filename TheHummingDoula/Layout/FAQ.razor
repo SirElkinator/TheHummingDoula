@@ -1,0 +1,48 @@
+﻿@page "/FAQ"
+
+@using System.Collections.Generic
+@using Microsoft.AspNetCore.Components.Web
+@inject IJSRuntime JS
+ 
+
+
+<div class="faq-container">
+    <h2 style="text-align:center">FAQs</h2>
+    <div class="eucalyptus faded-edges" style="padding:20px; padding-left:30px; padding-right:30px; min-height:60vh">
+    @foreach (var item in Questions)
+    {
+        <div class="faq-item">
+            <div class="faq-question" @onclick="() => ToggleAnswer(item)">
+                <span>@item.Question</span>
+                <span class="arrow @(item.IsOpen ? "open" : "")">&#9662;</span> <!-- Down arrow -->
+            </div>
+            <div class="faq-answer @(item.IsOpen ? "show" : "")">
+                @item.Answer
+            </div>
+        </div>
+    }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public List<QuestionItem> Questions { get; set; } = [new() { Question = "Test", Answer = "Answer" }, new() { Question = "Test 2", Answer = "Answer 2" }, new() { Question = "Test 3", Answer = "Answer 3" }];
+
+    private void ToggleAnswer(QuestionItem clickedItem)
+    {
+        foreach (var item in Questions)
+        {
+            if (item != clickedItem)
+                item.IsOpen = false;
+        }
+
+        clickedItem.IsOpen = !clickedItem.IsOpen;
+    }
+
+    public class QuestionItem
+    {
+        public string Question { get; set; } = "";
+        public string Answer { get; set; } = "";
+        public bool IsOpen { get; set; } = false;
+    }
+}

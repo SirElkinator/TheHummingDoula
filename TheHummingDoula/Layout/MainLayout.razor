@@ -1,0 +1,45 @@
+﻿@inherits LayoutComponentBase
+<div class="page wholeWheat" style="min-height:100vh;">
+    <main>  
+        @* Required *@
+        <MudThemeProvider Theme="MyCustomTheme" />
+        <MudPopoverProvider />
+
+        @* Needed for dialogs *@
+        <MudDialogProvider />
+
+        @* Needed for snackbars *@
+        <MudSnackbarProvider />
+
+        <NavMenu/>
+        <PageTitle>The Humming Doula</PageTitle>
+        <article class="content px-4 background" style="min-height:91vh; padding-top:115px;">
+            <img class="overlay" src="pictures/hummingblank.png" alt="Overlay Image">
+
+            @Body
+        </article>
+        <Footer/>
+    </main>
+</div>
+
+@code{
+    public MudTheme MyCustomTheme = new MudTheme()
+        {
+            PaletteLight = new PaletteLight()
+            {
+                Primary = "#9b7d61",
+                Secondary = "#daa38f",
+                AppbarBackground = Colors.Red.Default,
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = Colors.Blue.Lighten1
+            },
+
+            LayoutProperties = new LayoutProperties()
+            {
+                DrawerWidthLeft = "260px",
+                DrawerWidthRight = "300px"
+            }
+        };
+}

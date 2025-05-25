@@ -1,0 +1,105 @@
+﻿@page "/Contact"
+
+<div style="text-align:center">
+<h2>Contact Me</h2>
+
+<div class="row">
+        <div class="col-sm-3">
+            <p>
+                Phone Number:
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <p>
+                Website:
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <p>
+                Socials:
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <p>
+                PO Box:
+            </p>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:-35px">
+        <div class="col-sm-3">
+            <p>
+                1234567890
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <p>
+                thehummingdoula.com
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <p>
+                Instagram
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <p>
+                ABC Rd
+            </p>
+        </div>
+    </div>
+
+<div style=" padding:30px; padding-top:10px; margin-bottom:30px">
+
+        
+
+    <div class="row">
+    <div class="col-sm-6">
+            <MudBlazor.MudTextField T="string" Label="First Name *"></MudBlazor.MudTextField>
+
+        </div>
+        <div class="col-sm-6">
+            <MudBlazor.MudTextField T="string" Label="Last Name *"></MudBlazor.MudTextField>
+
+</div>
+</div>
+<br/>
+    <div class="row">
+        <div class="col-sm-6">
+            <MudBlazor.MudTextField T="string" Label="Email *"></MudBlazor.MudTextField>
+
+        </div>
+        <div class="col-sm-6">
+            <MudBlazor.MudTextField T="string" Label="Phone *"></MudBlazor.MudTextField>
+
+        </div>
+    </div>
+        <br />
+
+    <div class="row">
+        <div class="col-sm-12">
+            <MudBlazor.MudTextField T="string" Label="Subject *"></MudBlazor.MudTextField>
+
+        </div>
+    </div>
+        <br />
+
+    <div class="row">
+        <div class="col-sm-12">
+                <MudBlazor.MudTextField Counter="250" MaxLength="250" T="string" Label="Message *" Lines="2" @bind-Value="Message"></MudBlazor.MudTextField>
+
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" Disabled="String.IsNullOrWhiteSpace(Message)">Submit</MudButton>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    @code {
+        public string Message  { get; set; } = "";
+}
