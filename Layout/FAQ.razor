@@ -8,7 +8,7 @@
 
 <div class="faq-container">
     <h2 style="text-align:center">FAQs</h2>
-    <div class="eucalyptus faded-edges" style="padding:20px; padding-left:30px; padding-right:30px; min-height:60vh">
+    <div class="eucalyptus faded-edges" style="padding:20px; padding-left:30px; padding-right:30px; min-height:60vh; margin-bottom:50px">
     @foreach (var item in Questions)
     {
         <div class="faq-item">
@@ -26,7 +26,16 @@
 
 @code {
     [Parameter]
-    public List<QuestionItem> Questions { get; set; } = [new() { Question = "Test", Answer = "Answer" }, new() { Question = "Test 2", Answer = "Answer 2" }, new() { Question = "Test 3", Answer = "Answer 3" }];
+    public List<QuestionItem> Questions { get; set; } = [new() { Question = "What if I have a cesarean birth, is a doula useful then?", Answer = "Yes! My job is to support you in your birth in whichever way it may look like. Doulas are particularly helpful for parents that are unsuspecting of a cesarean birth because of the support, knowledge and resources they bring. However, they are also helpful for the parents that are choosing cesarean birth as well! Prior to birth, we will review your birth plan and discuss your wishes with the team. If your particular hospital allows, I will go with you to your birth and while nurses are assisting your procedure, and your birth support is watching for baby, my primary job is to make sure that you are comfortable and that your wishes are respected to the best of the hospital staffs ability!" },
+    new() { Question = "How will hiring a doula affect my partner's role in birth?", Answer = "As a doula, my role is never to replace anyone on your birth team. My role is to amplify the support you have and create an environment where your team can not only support you, but also your partner!" },
+    new() { Question = "Have you supported families in birth in the past?", Answer = "Although I am a student doula, I have supported multiple families in the birth of their baby. With the use of constant and productive communication between myself, the staff and the parents, each momma delivered their child in the way SHE felt most empowered. " },
+    new () { Question = "Do you attend births at home or birth centers?", Answer = "I would love to! I will support you wherever you need me. My biggest goal is to make sure that you experience the birth that you have dreamed of and we have prepared you for. So whether that's in your own bed or in the tub at the birthing center, I will be there to support you however you need me to!" },
+    new () { Question = "Do doulas support medicated births?", Answer = "Of course! There are many ways that you can choose to have a medicated birth. We will still use our tools to support you through the birth you want and ensure that you and your partner are supported through this journey!" },
+    new () { Question = "What is a doula's impact on birth?", Answer = "In a study published in 2018 by the Journals of Obstetric, Gynecology & Neonatal Nursing, it was found that women who received continuous support staff during labor showed improved maternal and newborn outcomes in the following categories: increased spontaneous vaginal birth, shorter duration of labor, decreased cesarean birth, decreased instrumental vaginal birth, decreased use of any analgesia, decreased use of regional analgesia, improved five-minute Apgar score, and fewer negative feelings about childbirth experiences. Additionally, the American College of Obstetricians and Gynecologists published in 2017 that they recommended “continuous support as one strategy to limit intervention during labor and birth.” This, along with literature published surrounding the limited continuous support allowed and the corresponding negative birth outcomes/ experience during the 2020 pandemic, shows there is substantial evidence supporting the use of a doula in the birth space" },
+    new () { Question = "When is the best time to hire a doula?", Answer = "Sooner rather than later! Giving us time to work together gives you optimal time to prepare for your birth. The more time I have to get to know you and visa versa, the better!" },
+    new () { Question = "Do you attend free births?", Answer = "I do not attend free births. I would love to support you in any birth that is attended by a midwife or obstetrician!" },
+    new () { Question = "I really want a doula but don’t have the funds.", Answer = "Let’s chat! I believe every woman deserves support in their birth and I would love to find a way to support you!" }];
+
 
     private void ToggleAnswer(QuestionItem clickedItem)
     {
