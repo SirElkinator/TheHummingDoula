@@ -17,6 +17,7 @@ body {
 
 .footer {
     padding: 20px;
+    height:86px;
     text-align: center;
 }
 
@@ -221,15 +222,214 @@ p {
 
 
 
+/* Mobile nav: initially hidden */
+.mobile-nav {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+    /* Show nav when toggled */
+    .mobile-nav.show {
+        display: flex !important;
+    }
+
+/* Hide the nav links on mobile by default */
+@media (max-width: 767.98px) {
+    #navLinks {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+/* Mobile nav styles */
+@media (max-width: 767.98px) {
+    .nav-links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #4b3621; /* Match your navbar */
+        width: 100%;
+    }
+
+        /* Show mobile menu when toggled */
+        .nav-links-container.show {
+            display: flex !important;
+        }
+}
+
+/* On mobile: keep brand and hamburger in one row */
+@media (max-width: 767.98px) {
+    .container-fluid {
+        flex-wrap: nowrap; /* prevent wrapping */
+    }
+
+    .navbar-toggler {
+        margin-left: auto; /* push hamburger all the way right */
+        height: 45px;
+        width: 45px;
+        padding: 0;
+        border: none;
+        background: transparent;
+    }
+
+    .navbar-toggler-icon {
+        width: 30px;
+        height: 30px;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .footer {
+        font-size: x-large;
+    }
+
+    h1 {
+        font-size: xx-large;
+    }
+
+    #faqcontainer {
+        width:90vw;
+        margin:0px;
+    }
+
+    .faq-container {
+        margin:2vw;
+        max-width:90vw;
+        }
+ 
+}
+
+#navLinks {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 767.98px) {
+    #navLinks {
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #7d654f;
+        padding: 0.25rem 0.75rem; /* less padding */
+        z-index: 1040;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        gap: 0.25rem; /* reduce space between items */
+    }
+
+        #navLinks.show {
+            display: flex !important;
+        }
+}
+
+
+.close-button {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem; /* smaller X */
+    margin-bottom: 0.25rem;
+    margin-right: 0.25rem;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    #navLinks {
+        height: 0 !important; /* collapse height ONLY on desktop */
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .nav-link,
+    .dropdown-item {
+        padding: 0.3rem 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        margin-left: 1rem;
+    }
+
+        .dropdown-menu .dropdown-item {
+            padding-left: 1.5rem;
+        }
+}
 
 
 
 
+@media (max-width: 767.98px) {
+    .nav-item.dropdown {
+        width: 100%; /* make it span the full menu width like other links */
+    }
+
+    .dropdown-toggle {
+        width: 100%;
+        text-align: left;
+        padding: 0.3rem 0.5rem;
+        font-size: 1.1rem;
+        border: none;
+        background: none;
+        color: white;
+    }
+
+    .dropdown-menu {
+        position: static !important; /* removes absolute positioning */
+        display: none;
+        background-color: #7a604d; /* optional: a touch darker for subitems */
+        padding-left: 1rem;
+        margin: 0;
+        box-shadow: none;
+    }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+    .dropdown-item {
+        width: 100%;
+        padding: 0.3rem 0.5rem;
+        font-size: 1rem;
+        color: white;
+    }
+}
+
+@media (min-width: 768px) {
+    #navLinks .nav-link,
+    #navLinks .dropdown-toggle {
+        font-size: 1.1rem; /* more typical nav size */
+        padding: 0.4rem 0.75rem;
+        line-height: 1.2;
+    }
 
 
 
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
 
-
+        .navbar-brand img {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+        }
+}
 
 
 

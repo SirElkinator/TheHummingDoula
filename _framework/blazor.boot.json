@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TheHummingDoula",
   "resources": {
-    "hash": "sha256-DcXkRL3jnVBJc/HK5avTIMRF9p05IOIHdd5OZkXke80=",
+    "hash": "sha256-HwdbIqcTxPByl+p0pF7gwmMooT0SwX79TNLso9twxDY=",
     "jsModuleNative": {
       "dotnet.native.8.0.5.k8qrcc28q0.js": "sha256-boyHe+0RMZDkzBKGhsrnXPhPg3oZ6UqJnTUzngJPjNY="
     },
@@ -58,7 +58,7 @@
       "System.Text.Json.wasm": "sha256-oxYPR9m2l7lZX+RSCahFRMTvqSgO+mUWIC2q7NZnw1I=",
       "System.Text.RegularExpressions.wasm": "sha256-5G3vJ4yBD/DkxzkMgoFj0zyNUiPEJ7pBncChEclTQIM=",
       "System.wasm": "sha256-OubjZw/80TLo8bE7YJHM01VGNwe1/x5XAEVXeRe0Md4=",
-      "TheHummingDoula.wasm": "sha256-zCLk2/pKTqTpzcpeRK1YJaO3wAFO6nHzgtldLmjgmzE="
+      "TheHummingDoula.wasm": "sha256-lbH333j9UKNLZsKXiai0gow6RT/nh74UL/Iis1P98mQ="
     }
   },
   "cacheBootResources": true,
