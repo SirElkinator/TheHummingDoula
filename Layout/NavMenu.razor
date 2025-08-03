@@ -1,43 +1,33 @@
 ﻿<div class="navbar navbar-dark milkyCoffee ps-3" style="position: fixed; top: 0; width: 100%; z-index: 1030; border-bottom: 1px solid grey">
     <img class="overlayFooter" style="z-index:100" src="pictures/floralpattern.jpg" alt="Overlay Image">
-    <div class="container-fluid d-flex align-items-center" style="z-index:101">
-        <a class="navbar-brand nav-link  d-flex align-items-center" style="height:45px; font-style:italic" href="">
-            <img style="width:35px; height:35px; margin-right:15px; " src="pictures/hummingdoulalogo.png" />
-            The Humming Doula 
+    <div class="container-fluid d-flex align-items-center justify-content-between" style="z-index:101">
+        <a class="navbar-brand nav-link d-flex align-items-center" style="height:45px; font-style:italic" href="">
+            <img style="width:35px; height:35px; margin-right:15px;" src="pictures/hummingdoulalogo.png" />
+            The Humming Doula
         </a>
-        <div class="d-flex ms-auto align-items-center" style="height:45px;">
-            <NavLink class="nav-link text-white" href="" Match="NavLinkMatch.All">
-                Home
-            </NavLink>
+
+        <!-- Hamburger button: only visible on mobile -->
+        <button class="navbar-toggler d-md-none" type="button" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- NAV LINKS WRAPPER -->
+        <div id="navLinks" class="nav-links-container d-none d-md-flex ms-auto align-items-center">
+            <button id="closeMobileMenu" class="close-button d-md-none" onclick="closeMobileMenu()" aria-label="Close menu" style="display:none;">&#x2715;</button>
+
+            <NavLink class="nav-link text-white" href="" Match="NavLinkMatch.All">Home</NavLink>
+
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    About Me
-                </a>
+                <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Me</a>
                 <ul class="dropdown-menu">
-                    <li>
-                        <NavLink class="dropdown-item" href="AboutMe">
-                            About Me
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink class="dropdown-item" href="Credentials">
-                            Credentials and Education
-                        </NavLink>
-                    </li>
+                    <li><NavLink class="dropdown-item" href="AboutMe">About Me</NavLink></li>
+                    <li><NavLink class="dropdown-item" href="Credentials">Credentials and Education</NavLink></li>
                 </ul>
             </div>
-            <NavLink class="nav-link text-white" href="Packages">
-                Packages
-            </NavLink>
-     @*        <NavLink class="nav-link text-white" href="Resources">
-                Resources
-            </NavLink> *@
-            <NavLink class="nav-link text-white" href="FAQ">
-                FAQs
-            </NavLink>
-            <NavLink class="nav-link text-white" href="Contact">
-                Contact
-            </NavLink>
+
+            <NavLink class="nav-link text-white" href="Packages">Packages</NavLink>
+            <NavLink class="nav-link text-white" href="FAQ">FAQs</NavLink>
+            <NavLink class="nav-link text-white" href="Contact">Contact</NavLink>
             <NavLink class="nav-link text-white" href="https://www.instagram.com/thehummingdoula?igsh=MWowbGl2Y3JsZXltNA%3D%3D&utm_source=qr">
                 <img style="width:20px;height:20px" src="pictures/insta.png" />
             </NavLink>
