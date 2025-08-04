@@ -1,4 +1,5 @@
 ﻿@page "/Contact"
+@inject IJSRuntime JS
 
 <div style="text-align:center">
 <h2>Contact Me</h2>
@@ -7,48 +8,34 @@
         <div class="col-sm-3">
             <p>
                 Phone Number:
-            </p>
-        </div>
-        <div class="col-sm-3">
-            <p>
-                Website:
-            </p>
-        </div>
-        <div class="col-sm-3">
-            <p>
-                Socials:
-            </p>
-        </div>
-        <div class="col-sm-3">
-            <p>
-                PO Box:
-            </p>
-        </div>
-    </div>
-
-    <div class="row" style="margin-top:-35px">
-        <div class="col-sm-3">
-            <p>
+            <br/>
                 1234567890
             </p>
         </div>
         <div class="col-sm-3">
             <p>
+                Website:
+           <br/>
                 thehummingdoula.com
             </p>
         </div>
         <div class="col-sm-3">
             <p>
+                Socials:
+           <br/>
                 <a href="https://www.instagram.com/thehummingdoula?igsh=MWowbGl2Y3JsZXltNA%3D%3D&utm_source=qr">Instagram</a>,
                 <a href="https://www.facebook.com/share/19MgUBKiZx/?mibextid=wwXIfr">Facebook</a>
             </p>
         </div>
         <div class="col-sm-3">
             <p>
+                PO Box:
+           <br/>
                 ABC Rd
             </p>
         </div>
     </div>
+
 
 <div style=" padding:30px; padding-top:10px; margin-bottom:30px">
 
@@ -56,22 +43,22 @@
 
     <div class="row">
     <div class="col-sm-6">
-            <MudBlazor.MudTextField T="string" Label="First Name *"></MudBlazor.MudTextField>
+            <MudBlazor.MudTextField T="string" Label="First Name *" @bind-Value="FirstName"></MudBlazor.MudTextField>
 
         </div>
         <div class="col-sm-6">
-            <MudBlazor.MudTextField T="string" Label="Last Name *"></MudBlazor.MudTextField>
+            <MudBlazor.MudTextField T="string" Label="Last Name *" @bind-Value="LastName"></MudBlazor.MudTextField>
 
 </div>
 </div>
 <br/>
     <div class="row">
         <div class="col-sm-6">
-            <MudBlazor.MudTextField T="string" Label="Email *"></MudBlazor.MudTextField>
+            <MudBlazor.MudTextField T="string" Label="Email *" @bind-Value="EmailAddress"></MudBlazor.MudTextField>
 
         </div>
         <div class="col-sm-6">
-            <MudBlazor.MudTextField T="string" Label="Phone *"></MudBlazor.MudTextField>
+            <MudBlazor.MudTextField T="string" Label="Phone *" @bind-Value="PhoneNumber"></MudBlazor.MudTextField>
 
         </div>
     </div>
@@ -79,7 +66,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <MudBlazor.MudTextField T="string" Label="Subject *"></MudBlazor.MudTextField>
+            <MudBlazor.MudTextField T="string" Label="Subject *" @bind-Value="Subject"></MudBlazor.MudTextField>
 
         </div>
     </div>
@@ -93,14 +80,34 @@
     </div>
         <div class="row">
             <div class="col-sm-12">
-                <MudButton Variant="Variant.Filled" Color="Color.Secondary" Disabled="String.IsNullOrWhiteSpace(Message)">Submit</MudButton>
+                <MudButton OnClick="SubmitForm" Disabled="@((String.IsNullOrWhiteSpace(FirstName) || String.IsNullOrWhiteSpace(LastName) || String.IsNullOrWhiteSpace(EmailAddress) || String.IsNullOrWhiteSpace(PhoneNumber) || String.IsNullOrWhiteSpace(Subject) || String.IsNullOrWhiteSpace(Message))|| IsSubmitting)" Variant="Variant.Filled" Color="Color.Secondary">
+                    @(!IsSubmitting ? "Submit" : "Sending...")
+                </MudButton>
             </div>
         </div>
 
     </div>
     </div>
 
+<form id="hiddenForm" action="https://formspree.io/f/mzzvawae" method="POST" style="display:none">
+    <input name="First Name" value="@FirstName" />
+    <input name="Last Name" value="@LastName" />
+    <input name="Email" value="@EmailAddress" />
+    <input name="Phone Number" value="@PhoneNumber" />
+    <input name="Subject" value="@Subject" />
+    <textarea name="Message">@Message</textarea>
+</form>
 
-    @code {
-        public string Message  { get; set; } = "";
+
+
+@code {
+    string FirstName = "", LastName = "", EmailAddress = "", PhoneNumber = "", Subject = "", Message = "";
+    bool IsSubmitting = false;
+
+    private async Task SubmitForm()
+    {
+        IsSubmitting = true;
+        await JS.InvokeVoidAsync("submitHiddenForm");
+        IsSubmitting = false;
+    }
 }
