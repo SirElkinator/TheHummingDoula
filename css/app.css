@@ -188,8 +188,8 @@ p {
 }
 
 @font-face {
-    font-family: 'HummingDoula'; 
-    src: url('/fonts/rm-basic-serif.otf') format('opentype');
+    font-family: 'HummingDoula';
+    src: url('https://sirelkinator.github.io/TheHummingDoula/fonts/rm-basic-serif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
