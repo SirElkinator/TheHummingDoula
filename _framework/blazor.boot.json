@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TheHummingDoula",
   "resources": {
-    "hash": "sha256-HwdbIqcTxPByl+p0pF7gwmMooT0SwX79TNLso9twxDY=",
+    "hash": "sha256-0Wvk/2SBy823qvmde50YU431zPuvyYFsMFORGeaXUxE=",
     "jsModuleNative": {
       "dotnet.native.8.0.5.k8qrcc28q0.js": "sha256-boyHe+0RMZDkzBKGhsrnXPhPg3oZ6UqJnTUzngJPjNY="
     },
@@ -53,12 +53,12 @@
       "System.Private.Uri.wasm": "sha256-6F1GUqdzj/gvAnY5iqgV2qXZzojqb2CiWFhobdpSvCs=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-RvSQhLKJujLuqBo74rRl9EPQoT0pjZd0C+p6/QODOF8=",
       "System.Runtime.InteropServices.wasm": "sha256-Tb2D6/zr51Q1HnfdYhyM/fUlqPRvP4OnCYSE1OL+3xQ=",
-      "System.Runtime.wasm": "sha256-iMN6m1qRryHrl8skPzJN5On/B7NyJ3ko771KtLq/I+8=",
+      "System.Runtime.wasm": "sha256-cseYgC+wvwCDazvDXMXRD21M2VUToKbUH5gzx33Y5yw=",
       "System.Text.Encodings.Web.wasm": "sha256-FcdXnswiO5ciSFlTqeZtH/LHOzBYGhHUHpA6GJMdeXs=",
       "System.Text.Json.wasm": "sha256-oxYPR9m2l7lZX+RSCahFRMTvqSgO+mUWIC2q7NZnw1I=",
       "System.Text.RegularExpressions.wasm": "sha256-5G3vJ4yBD/DkxzkMgoFj0zyNUiPEJ7pBncChEclTQIM=",
       "System.wasm": "sha256-OubjZw/80TLo8bE7YJHM01VGNwe1/x5XAEVXeRe0Md4=",
-      "TheHummingDoula.wasm": "sha256-lbH333j9UKNLZsKXiai0gow6RT/nh74UL/Iis1P98mQ="
+      "TheHummingDoula.wasm": "sha256-ui22Z7YYGiV+gFOYYZFuJuT1Q2CccTyBPr0BPRmOB6k="
     }
   },
   "cacheBootResources": true,
