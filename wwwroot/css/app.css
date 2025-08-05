@@ -252,7 +252,7 @@ p {
         align-items: flex-start;
         gap: 0.5rem;
         padding: 0.5rem 1rem;
-        background-color: #4b3621; /* Match your navbar */
+        background-color: #9b7d61; /* Match your navbar */
         width: 100%;
     }
 
@@ -314,11 +314,11 @@ p {
     #navLinks {
         display: none;
         position: absolute;
-        top: 45px;
+        top: 0px;
         left: 0;
         right: 0;
         flex-direction: column;
-        background-color: #7d654f;
+        background-color: #9b7d61;
         padding: 0.25rem 0.75rem; /* less padding */
         z-index: 1040;
         max-height: 80vh;
@@ -339,8 +339,6 @@ p {
     border: none;
     color: white;
     font-size: 1.5rem; /* smaller X */
-    margin-bottom: 0.25rem;
-    margin-right: 0.25rem;
     padding: 0.25rem;
     cursor: pointer;
 }
@@ -381,7 +379,7 @@ p {
 
     .dropdown-toggle {
         width: 100%;
-        text-align: left;
+        text-align: center; /* center text like other nav links */
         padding: 0.3rem 0.5rem;
         font-size: 1.1rem;
         border: none;
@@ -432,6 +430,26 @@ p {
 }
 
 
+@media (max-width: 767.98px) {
+    /* Center the first-level About Me link + caret */
+    #navLinks .nav-item.dropdown > .dropdown-toggle {
+        width: 100%;
+        text-align: center; /* center the text + arrow */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        /* Keep caret close to text */
+        #navLinks .nav-item.dropdown > .dropdown-toggle::after {
+            margin-left: 0.3em;
+        }
+
+    /* Center dropdown sub-items too */
+    .dropdown-menu .dropdown-item {
+        text-align: center;
+    }
+}
 
 
 
