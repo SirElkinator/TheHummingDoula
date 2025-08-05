@@ -1,5 +1,5 @@
 html, body {
-    font-family: 'HummingDoula', Garamond, sans-serif;
+    font-family: 'HummingDoula',  Ebrima, sans-serif;
     font-size: 30px;
     margin: 0;
 }
@@ -189,7 +189,7 @@ p {
 
 @font-face {
     font-family: 'HummingDoula';
-    src: url('https://sirelkinator.github.io/TheHummingDoula/fonts/rm-basic-serif.otf') format('opentype');
+    src: url('https://sirelkinator.github.io/TheHummingDoula/fonts/rm-basic-serif-regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -312,6 +312,8 @@ p {
 
 @media (max-width: 767.98px) {
     #navLinks {
+        transform: translateY(0px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
         display: none;
         position: absolute;
         top: 0px;
