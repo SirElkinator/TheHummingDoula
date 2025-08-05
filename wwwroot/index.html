@@ -38,58 +38,33 @@
         function toggleMobileMenu() {
             const menu = document.getElementById("navLinks");
             const closeButton = document.getElementById("closeMobileMenu");
-
             const isOpen = menu.classList.toggle("show");
-            menu.classList.toggle("d-none", !isOpen);
-
-            if (isOpen) {
-                closeButton.style.display = "block";
-            } else {
-                closeButton.style.display = "none";
-            }
+            closeButton.style.display = isOpen ? "block" : "none";
         }
 
         function closeMobileMenu() {
             const menu = document.getElementById("navLinks");
             const closeButton = document.getElementById("closeMobileMenu");
-
             menu.classList.remove("show");
-            menu.classList.add("d-none");
             closeButton.style.display = "none";
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            const navLinks = document.querySelectorAll("#navLinks .nav-link, #navLinks .dropdown-item");
-
-            navLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    if (window.innerWidth < 768) { // only on mobile
-                        closeMobileMenu();
-                    }
-                });
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
             const isMobile = () => window.innerWidth < 768;
 
+            // Close menu when any link is clicked (mobile)
             const navLinks = document.querySelectorAll("#navLinks .nav-link, #navLinks .dropdown-item");
             navLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    if (isMobile()) {
-                        closeMobileMenu();
-                    }
-                });
+                link.addEventListener("click", () => { if (isMobile()) closeMobileMenu(); });
             });
 
             // Toggle About Me dropdown on mobile
-            const aboutDropdownToggle = document.querySelector('.dropdown-toggle');
-            const aboutDropdownMenu = document.querySelector('.dropdown-menu');
-
+            const aboutDropdownToggle = document.querySelector('#navLinks .dropdown-toggle');
+            const aboutDropdownMenu = document.querySelector('#navLinks .dropdown-menu');
             if (aboutDropdownToggle && aboutDropdownMenu) {
                 aboutDropdownToggle.addEventListener('click', (e) => {
                     if (isMobile()) {
-                        e.preventDefault(); // prevent normal navigation
+                        e.preventDefault();
                         aboutDropdownMenu.classList.toggle('show');
                     }
                 });

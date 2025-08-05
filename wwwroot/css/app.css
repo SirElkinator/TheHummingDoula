@@ -175,7 +175,7 @@ p {
 }
 
     .faq-answer.show {
-        max-height: 500px; /* adjust if needed */
+        max-height: 3000px; /* adjust if needed */
         opacity: 1;
         padding: 10px 0;
         padding-left: 10px;
@@ -430,6 +430,13 @@ p {
 }
 
 
+
+.navbar {
+    border-bottom: solid black 1px;
+}
+
+
+
 @media (max-width: 767.98px) {
     /* Center the first-level About Me link + caret */
     #navLinks .nav-item.dropdown > .dropdown-toggle {
@@ -448,6 +455,10 @@ p {
     /* Center dropdown sub-items too */
     .dropdown-menu .dropdown-item {
         text-align: center;
+    }
+
+    .faq-question {
+        font-size: xx-large;
     }
 }
 
